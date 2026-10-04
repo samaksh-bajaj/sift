@@ -3,7 +3,7 @@
 [![CI](https://github.com/samaksh-bajaj/sift/actions/workflows/ci.yml/badge.svg)](https://github.com/samaksh-bajaj/sift/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-Sift turns webpages into structured, source-backed comparisons. This repository contains the React workspace, Manifest V3 Chrome extension, shared TypeScript domain package, Supabase database and Edge Functions, and Gemini provider integration described in `project_instructions_ aggregator.md`.
+Sift turns webpages into structured, source-backed comparisons. This repository contains the React workspace, Manifest V3 Chrome extension, shared TypeScript domain package, Supabase database and Edge Functions, and Gemini provider integration described in `docs/SPEC.md`.
 
 **[Try the live demo](https://sift-delta-vert.vercel.app)** — choose **Explore the demo** to use a fictional comparison workspace without creating an account or making AI calls.
 
