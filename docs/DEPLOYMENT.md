@@ -1,6 +1,6 @@
 # Vercel static deployment
 
-The web workspace deploys to Vercel as a static build, with Supabase as the shared backend. The seven Supabase Edge Functions are deployed to the Sift project (`kyhejuyczptkvdeopvll`). The production workspace is https://sift-delta-vert.vercel.app. Backend access currently allows that origin, `http://127.0.0.1:5173`, and `http://localhost:5173`. Add the installed Chrome extension origin (`chrome-extension://YOUR_EXTENSION_ID`) to `ALLOWED_ORIGINS` once it exists; unlisted origins are rejected.
+The web workspace deploys to Vercel as a static build, with Supabase as the shared backend. The seven Supabase Edge Functions are deployed to the Sift project (`kyhejuyczptkvdeopvll`). The production workspace is https://sift-delta-vert.vercel.app. Backend access currently allows that origin, `http://127.0.0.1:5173`, `http://localhost:5173`, and the installed Chrome extension origin `chrome-extension://canfkeihololoebhbnodeglhhhjadapl`; unlisted origins are rejected. An unpacked extension gets a different ID on another machine or path, so add that origin to `ALLOWED_ORIGINS` when it changes.
 
 Build command: `pnpm --filter @sift/web build`.
 
