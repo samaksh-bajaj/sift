@@ -3,7 +3,7 @@
 [![CI](https://github.com/samaksh-bajaj/sift/actions/workflows/ci.yml/badge.svg)](https://github.com/samaksh-bajaj/sift/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-Sift turns webpages into structured, source-backed comparisons. This repository contains the React workspace, Manifest V3 Chrome extension, shared TypeScript domain package, Supabase database and Edge Functions, and Gemini provider integration described in `docs/SPEC.md`.
+Sift turns webpages into structured, source-backed comparisons. This repository contains the React workspace, Manifest V3 Chrome extension, shared TypeScript domain package, Supabase database and Edge Functions, and Gemini provider integration.
 
 **[Try the live demo](https://sift-delta-vert.vercel.app)** — choose **Explore the demo** to use a fictional comparison workspace without creating an account or making AI calls.
 
@@ -41,7 +41,7 @@ You can filter, sort, inspect evidence, edit values, create/rename/delete projec
 
 The origin allowlist is exact and comma-separated, for example `http://127.0.0.1:5173,http://localhost:5173,chrome-extension://YOUR_EXTENSION_ID`. An empty list denies browser-origin requests. Add the actual extension ID after loading it; do not use a wildcard.
 
-For local functions, use the Supabase CLI's `functions serve --env-file supabase/functions/.env` after filling that ignored file. For hosted functions, store the values with Supabase's secret management. **Do not paste secret values into chat or commit them.**
+For local functions, use the Supabase CLI's `functions serve --env-file supabase/functions/.env` after filling that ignored file. For hosted functions, store the values with Supabase's secret management. **Never commit secret values.**
 
 ## Load the Chrome extension
 
@@ -79,9 +79,9 @@ The extension test adds a localhost-only host permission to a disposable test co
 - `tests/fixtures`: local HTML samples; never scrape live sites in automated tests.
 - `docs`: deployment, privacy, and remaining verification notes.
 
-## Current delivery boundary
+## Current status
 
-This implementation is deployed on Vercel and connected to a hosted Supabase project. The migrations and Gemini secret are configured, all seven Edge Functions are deployed, and every endpoint has been checked to reject unauthenticated requests and unlisted origins. Sign-up, authenticated capture from the real Chrome toolbar flow, and live Gemini extraction have been exercised end to end. Cross-account isolation and a broader extraction-accuracy benchmark still need live acceptance testing. See `docs/STATUS.md` for the remaining work.
+Sift is deployed on Vercel and connected to a hosted Supabase project. The migrations and Gemini secret are configured, all seven Edge Functions are deployed, and every endpoint has been checked to reject unauthenticated requests and unlisted origins. Sign-up, authenticated capture from the real Chrome toolbar flow, and live Gemini extraction have been exercised end to end. Cross-account isolation and a broader extraction-accuracy benchmark still need live acceptance testing. See `docs/STATUS.md` for the remaining work.
 
 ## Contributing and security
 

@@ -10,4 +10,4 @@ Use Node 22.13+ (or Node 24). Configure only `VITE_SUPABASE_URL`, `VITE_SUPABASE
 
 `vercel.json` sets the build and rewrites every path to `index.html` (the `public/_redirects` file does the same on hosts that read it) so links to `/projects/:id`, `/sign-in`, and `/sign-up` open the application. After deployment, update Supabase Auth's site/redirect URLs and Edge Function `ALLOWED_ORIGINS`, then rebuild the extension with the deployed workspace URL.
 
-Run the live acceptance checklist in `STATUS.md` before inviting users. Recheck current hosting and provider plans rather than relying on the historical pricing statements in the original specification.
+Work through the open items in `STATUS.md` before inviting users, and check current hosting and provider pricing before relying on the free tiers.

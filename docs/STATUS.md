@@ -1,6 +1,6 @@
-# Implementation and acceptance status
+# Project status
 
-## Implemented locally
+## Implemented
 
 - pnpm monorepo, strict TypeScript, lint/format checks, Vitest, Playwright, repeatable PostgreSQL security tests.
 - Seven shared templates plus custom projects; validated typed fields and values.
@@ -26,7 +26,7 @@
 ## Intentional limits
 
 - Demo queries use a small literal parser; unsupported wording is rejected. Live accounts use the provider interpreter.
-- Public URL/file ingestion, subjective ranking, large background batch jobs, public sharing, and polished PDF reports are not implemented in this initial slice. The shared captured-document and item interfaces support future ingestion methods.
+- Public URL/file ingestion, subjective ranking, large background batch jobs, public sharing, and polished PDF reports are not implemented yet. The shared captured-document and item interfaces support future ingestion methods.
 - Field labels can be renamed; existing field data types cannot be changed in place because that needs explicit value migration. Add a new field for a different type.
 - Source evidence is checked for exact presence and allowed URL. This catches invented quotes but does not prove that a quote semantically entails an extracted value. Human verification and the accuracy benchmark remain important.
 - Database tests use a PostgreSQL harness with minimal Supabase platform interfaces, not a complete Supabase service stack.
