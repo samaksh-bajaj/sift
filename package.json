@@ -2,6 +2,14 @@
   "name": "sift",
   "private": true,
   "version": "0.1.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samaksh-bajaj/sift.git"
+  },
+  "bugs": {
+    "url": "https://github.com/samaksh-bajaj/sift/issues"
+  },
   "type": "module",
   "packageManager": "pnpm@11.19.0",
   "engines": {
@@ -19,7 +27,8 @@
     "test:e2e": "playwright test",
     "test:db": "node scripts/test-db.mjs",
     "test:backend": "pnpm build:backend && deno test --allow-env --allow-read --config supabase/functions/deno.json supabase/functions/_shared/handler.test.ts",
-    "typecheck:backend": "pnpm build:backend && deno check --config supabase/functions/deno.json supabase/functions/extract-item/index.ts"
+    "typecheck:backend": "pnpm build:backend && deno check --config supabase/functions/deno.json supabase/functions/extract-item/index.ts",
+    "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm build"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.0",
