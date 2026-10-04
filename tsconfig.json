@@ -12,7 +12,7 @@
     "resolveJsonModule": true,
     "allowImportingTsExtensions": true,
     "noEmit": true,
-    "types": ["node", "vite/client"]
+    "types": ["node", "chrome", "vite/client"]
   },
   "include": ["apps", "packages", "tests", "*.ts"],
   "exclude": ["node_modules", "**/dist"]
