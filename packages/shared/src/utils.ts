@@ -43,7 +43,7 @@ export function displayValue(cell?: Cell): string {
   if (typeof cell.value === 'boolean') return cell.value ? 'Yes' : 'No';
   if (Array.isArray(cell.value)) return cell.value.join(', ');
   if (typeof cell.value === 'number' && cell.currency)
-    return new Intl.NumberFormat('en-CA', {
+    return new Intl.NumberFormat('en-AU', {
       style: 'currency',
       currency: cell.currency,
       maximumFractionDigits: 2,

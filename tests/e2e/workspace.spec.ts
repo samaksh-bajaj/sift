@@ -55,7 +55,7 @@ test('apartment comparison, evidence, edit, dynamic field and export', async ({
   await expect(page.locator('tbody tr')).toHaveCount(5);
   await expect(
     page.getByRole('button', {
-      name: 'A$1,225.00 Manually edited',
+      name: '$1,225.00 Manually edited',
       exact: true,
     }),
   ).toBeVisible();
