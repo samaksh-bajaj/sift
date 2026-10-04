@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "license": "MIT",
+  "homepage": "https://sift-delta-vert.vercel.app",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/samaksh-bajaj/sift.git"

@@ -5,6 +5,8 @@
 
 Sift turns webpages into structured, source-backed comparisons. This repository contains the React workspace, Manifest V3 Chrome extension, shared TypeScript domain package, Supabase database and Edge Functions, and Gemini provider integration described in `project_instructions_ aggregator.md`.
 
+**[Try the live demo](https://sift-delta-vert.vercel.app)** — choose **Explore the demo** to use a fictional comparison workspace without creating an account or making AI calls.
+
 ## Highlights
 
 - Capture one webpage at a time from the Chrome side panel with explicit user action.
@@ -79,7 +81,7 @@ The extension test adds a localhost-only host permission to a disposable test co
 
 ## Current delivery boundary
 
-This implementation is connected to a hosted Supabase project and is configured for a static Vercel deployment. The migrations and Gemini secret are configured, all seven Edge Functions are deployed, and every endpoint has been checked to reject unauthenticated requests and unlisted origins. Authenticated capture, private snapshot storage, live Gemini extraction, the real Chrome toolbar flow, cross-account isolation, and a broader extraction-accuracy benchmark still need live acceptance testing. See `docs/STATUS.md` for the remaining work.
+This implementation is deployed on Vercel and connected to a hosted Supabase project. The migrations and Gemini secret are configured, all seven Edge Functions are deployed, and every endpoint has been checked to reject unauthenticated requests and unlisted origins. Authenticated capture, private snapshot storage, live Gemini extraction, the real Chrome toolbar flow, cross-account isolation, and a broader extraction-accuracy benchmark still need live acceptance testing. See `docs/STATUS.md` for the remaining work.
 
 ## Contributing and security
 
