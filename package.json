@@ -9,13 +9,15 @@
   },
   "scripts": {
     "dev": "pnpm --filter @sift/web dev",
-    "build": "pnpm -r build",
+    "build": "pnpm -r build && pnpm build:backend",
+    "build:backend": "node scripts/build-backend.mjs",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "test": "vitest run",
-    "test:db": "node scripts/test-db.mjs"
+    "test:db": "node scripts/test-db.mjs",
+    "typecheck:backend": "pnpm build:backend && deno check --config supabase/functions/deno.json supabase/functions/extract-item/index.ts"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.0",
@@ -24,6 +26,8 @@
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
     "@vitejs/plugin-react": "^5.1.0",
+    "deno": "^2.9.6",
+    "esbuild": "^0.28.2",
     "eslint": "^9.39.0",
     "globals": "^16.5.0",
     "jsdom": "^26.1.0",
