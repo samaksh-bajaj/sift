@@ -81,7 +81,7 @@ The extension test adds a localhost-only host permission to a disposable test co
 
 ## Current delivery boundary
 
-This implementation is deployed on Vercel and connected to a hosted Supabase project. The migrations and Gemini secret are configured, all seven Edge Functions are deployed, and every endpoint has been checked to reject unauthenticated requests and unlisted origins. Authenticated capture, private snapshot storage, live Gemini extraction, the real Chrome toolbar flow, cross-account isolation, and a broader extraction-accuracy benchmark still need live acceptance testing. See `docs/STATUS.md` for the remaining work.
+This implementation is deployed on Vercel and connected to a hosted Supabase project. The migrations and Gemini secret are configured, all seven Edge Functions are deployed, and every endpoint has been checked to reject unauthenticated requests and unlisted origins. Sign-up, authenticated capture from the real Chrome toolbar flow, and live Gemini extraction have been exercised end to end. Cross-account isolation and a broader extraction-accuracy benchmark still need live acceptance testing. See `docs/STATUS.md` for the remaining work.
 
 ## Contributing and security
 

@@ -16,7 +16,7 @@
 ## Required before calling the MVP complete
 
 1. Completed: Sift project connected, migrations applied, Gemini secret present, and all seven Edge Functions deployed. Every endpoint was checked to reject unauthenticated requests with HTTP 401 accept the configured local, production web, and extension origins, and refuse unlisted origins.
-2. Exercise registration, login, real private Storage upload, live Gemini extraction, duplicate updates, background extraction status, and the production Chrome toolbar flow with apartment listings.
+2. Completed: registration, login, page capture from the production Chrome toolbar flow, live Gemini extraction, and the saved row appearing in the workspace were exercised on the deployed site. Duplicate updates and background status handling still need a deliberate pass.
 3. Verify direct cross-account API isolation against a second live account.
 4. Run a live Gemini evaluation across varied listings. The configured token prices remain editable estimates, not a verified current billing promise.
 5. Expand the fixture set into a manually labeled 30–50-source accuracy benchmark and evaluate real extraction. Mocked contract tests are not an extraction-quality measurement.
