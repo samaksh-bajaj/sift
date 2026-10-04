@@ -1,0 +1,7 @@
+pnpm-lock.yaml
+node_modules
+dist
+project_instructions_ aggregator.md
+playwright-report
+test-results
+supabase/functions/_shared/domain.js
