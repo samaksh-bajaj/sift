@@ -20,7 +20,8 @@
 3. Verify direct cross-account API isolation against a second live account.
 4. Expand live Gemini evaluation beyond the exercised listings. The configured token prices remain editable estimates, not a verified current billing promise.
 5. Expand the fixture set into a manually labeled 30–50-source accuracy benchmark and evaluate real extraction. Mocked contract tests are not an extraction-quality measurement.
-6. Review the privacy draft, choose free-tier versus paid-tier Gemini data handling, and deploy the static web build to the user's Cloudflare account.
+6. Completed: the static web build is deployed on Vercel with the production origin configured in Supabase.
+7. Review the privacy draft and choose free-tier versus paid-tier Gemini data handling before broader public use.
 
 ## Intentional limits
 
