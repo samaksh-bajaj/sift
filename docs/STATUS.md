@@ -15,12 +15,12 @@
 
 ## Required before calling the MVP complete
 
-1. Completed: Sift project connected, migrations applied, Gemini secret present, and all seven Edge Functions deployed. Every endpoint was checked to reject unauthenticated requests with HTTP 401 and accept the configured local web and extension origins.
-2. Completed: registration, login, real private Storage upload, live Gemini extraction, duplicate updates, background extraction status, and the production Chrome toolbar flow were exercised with apartment listings.
+1. Completed: Sift project connected, migrations applied, Gemini secret present, and all seven Edge Functions deployed. Every endpoint was checked to reject unauthenticated requests with HTTP 401 accept the configured local web origins, and refuse unlisted origins.
+2. Exercise registration, login, real private Storage upload, live Gemini extraction, duplicate updates, background extraction status, and the production Chrome toolbar flow with apartment listings.
 3. Verify direct cross-account API isolation against a second live account.
-4. Expand live Gemini evaluation beyond the exercised listings. The configured token prices remain editable estimates, not a verified current billing promise.
+4. Run a live Gemini evaluation across varied listings. The configured token prices remain editable estimates, not a verified current billing promise.
 5. Expand the fixture set into a manually labeled 30–50-source accuracy benchmark and evaluate real extraction. Mocked contract tests are not an extraction-quality measurement.
-6. Completed: the static web build is deployed on Vercel with the production origin configured in Supabase.
+6. Deploy the static web build on Vercel and configure the production origin in Supabase Auth and `ALLOWED_ORIGINS`.
 7. Review the privacy draft and choose free-tier versus paid-tier Gemini data handling before broader public use.
 
 ## Intentional limits
