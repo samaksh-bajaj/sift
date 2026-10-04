@@ -11,7 +11,7 @@
     "@sift/shared": "workspace:*",
     "@supabase/supabase-js": "^2.117.2",
     "exceljs": "^4.4.0",
-    "lucide-react": "^0.468.0",
+    "lucide-react": "^0.577.0",
     "react": "^19.3.0",
     "react-dom": "^19.3.0"
   }
