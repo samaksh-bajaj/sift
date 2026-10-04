@@ -743,7 +743,7 @@ function App() {
                 aria-label="Ask or filter"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Ask or filter… try “under $1,300 with parking”"
+                placeholder="Ask or filter… try “under $2,300 with parking”"
               />
               <button disabled={busy} type="submit">
                 {busy ? 'Working…' : 'Apply'}
@@ -985,7 +985,7 @@ function App() {
               Project name
               <input
                 name="name"
-                placeholder="e.g. Edmonton Apartments"
+                placeholder="e.g. Melbourne Apartments"
                 required
                 maxLength={120}
                 autoFocus

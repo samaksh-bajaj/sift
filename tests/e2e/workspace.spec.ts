@@ -6,18 +6,18 @@ test('apartment comparison, evidence, edit, dynamic field and export', async ({
   page.on('pageerror', (e) => errors.push(e.message));
   await page.goto('/');
   await expect(
-    page.getByRole('heading', { name: 'Edmonton Apartments', exact: true }),
+    page.getByRole('heading', { name: 'Melbourne Apartments', exact: true }),
   ).toBeVisible();
   await expect(page.locator('tbody tr')).toHaveCount(5);
   await page
     .getByRole('textbox', { name: 'Ask or filter' })
-    .fill('under $1300 with parking');
+    .fill('under $2300 with parking');
   await page.getByRole('button', { name: 'Apply', exact: true }).click();
   await expect(page.locator('tbody tr')).toHaveCount(2);
   await page
-    .getByRole('button', { name: 'Garneau Place', exact: true })
+    .getByRole('button', { name: 'Carlton Terrace', exact: true })
     .click();
-  await expect(page.getByText('“rent: 1250”')).toBeVisible();
+  await expect(page.getByText('“rent: 2250”')).toBeVisible();
   const rent = page.locator('.field-detail').filter({
     has: page.getByRole('heading', { name: 'Monthly rent', exact: true }),
   });
@@ -35,7 +35,7 @@ test('apartment comparison, evidence, edit, dynamic field and export', async ({
     .last()
     .click();
   await page
-    .getByRole('button', { name: 'Garneau Place', exact: true })
+    .getByRole('button', { name: 'Carlton Terrace', exact: true })
     .click();
   const balcony = page.locator('.field-detail').filter({
     has: page.getByRole('heading', { name: 'Balcony', exact: true }),
@@ -48,12 +48,14 @@ test('apartment comparison, evidence, edit, dynamic field and export', async ({
   await page.getByRole('button', { name: 'Export', exact: true }).click();
   const download = page.waitForEvent('download');
   await page.getByRole('button', { name: 'XLSX', exact: true }).click();
-  expect((await download).suggestedFilename()).toBe('Edmonton Apartments.xlsx');
+  expect((await download).suggestedFilename()).toBe(
+    'Melbourne Apartments.xlsx',
+  );
   await page.reload();
   await expect(page.locator('tbody tr')).toHaveCount(5);
   await expect(
     page.getByRole('button', {
-      name: '$1,225.00 Manually edited',
+      name: 'A$1,225.00 Manually edited',
       exact: true,
     }),
   ).toBeVisible();

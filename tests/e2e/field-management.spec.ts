@@ -16,7 +16,7 @@ test('invalid boolean filters are rejected instead of becoming false', async ({
   await page.getByRole('button', { name: 'Apply filter', exact: true }).click();
   await expect(page.locator('tbody tr')).toHaveCount(1);
   await expect(
-    page.getByRole('button', { name: 'Whyte Avenue Studio', exact: true }),
+    page.getByRole('button', { name: 'Fitzroy Studio', exact: true }),
   ).toBeVisible();
 });
 test('field labels can be edited and existing items populated from snapshots', async ({
@@ -35,7 +35,7 @@ test('field labels can be edited and existing items populated from snapshots', a
     .click();
   await page.getByRole('button', { name: 'Populate existing items' }).click();
   await page
-    .getByRole('button', { name: 'Garneau Place', exact: true })
+    .getByRole('button', { name: 'Carlton Terrace', exact: true })
     .click();
   const utilities = page.locator('.field-detail').filter({
     has: page.getByRole('heading', {
@@ -44,9 +44,7 @@ test('field labels can be edited and existing items populated from snapshots', a
     }),
   });
   await expect(
-    utilities.getByText('Heat and water', { exact: true }),
+    utilities.getByText('Gas and water', { exact: true }),
   ).toBeVisible();
-  await expect(
-    utilities.getByText('“utilities: Heat and water”'),
-  ).toBeVisible();
+  await expect(utilities.getByText('“utilities: Gas and water”')).toBeVisible();
 });

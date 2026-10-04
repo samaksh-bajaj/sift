@@ -140,7 +140,7 @@ test('unpacked extension captures a fixture, sends sanitized data and displays t
     );
     expect(saves).toBe(1);
     expect(captured?.url).toContain('apartment-1.html');
-    expect(captured?.cleanedText).toContain('Garneau Place');
+    expect(captured?.cleanedText).toContain('Carlton Terrace');
     expect(JSON.stringify(captured)).not.toContain('DO_NOT_CAPTURE');
     expect(JSON.stringify(captured)).not.toContain('Python engineer');
     await expect(

@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs';
 import { expect, it } from 'vitest';
 import { capturePage } from '../packages/shared/src/capture';
 it.each([
-  ['apartment-1.html', 'Garneau Place'],
+  ['apartment-1.html', 'Carlton Terrace'],
   ['hotel.html', 'Harbour Hotel'],
   ['job.html', 'Python engineer'],
   ['product.html', 'Field Laptop'],

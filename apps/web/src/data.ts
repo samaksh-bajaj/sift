@@ -35,12 +35,12 @@ const stateSchema = z.object({
   sources: z.record(z.string(), documentSchema),
 });
 export type Workspace = z.infer<typeof stateSchema>;
-const demoKey = 'sift-demo-v1';
+const demoKey = 'sift-demo-v2';
 const now = () => new Date().toISOString();
 export function seedDemo(): Workspace {
   const project: Project = {
     id: crypto.randomUUID(),
-    name: 'Edmonton Apartments',
+    name: 'Melbourne Apartments',
     templateType: 'apartments',
     description: 'A shortlist for the next chapter.',
     createdAt: now(),
@@ -50,9 +50,9 @@ export function seedDemo(): Workspace {
   const sources: Record<string, CapturedDocument> = {};
   const samples = [
     {
-      name: 'Garneau Place',
-      address: '109 Street · Garneau',
-      rent: 1250,
+      name: 'Carlton Terrace',
+      address: 'Lygon Street · Carlton',
+      rent: 2250,
       bedrooms: 1,
       bathrooms: 1,
       square_feet: 620,
@@ -61,12 +61,12 @@ export function seedDemo(): Workspace {
       pets: 'Cats welcome',
       pool: null,
       gym: true,
-      utilities: 'Heat and water',
+      utilities: 'Gas and water',
     },
     {
-      name: 'Whyte Avenue Studio',
-      address: '82 Avenue · Strathcona',
-      rent: 1175,
+      name: 'Fitzroy Studio',
+      address: 'Brunswick Street · Fitzroy',
+      rent: 1850,
       bedrooms: 0,
       bathrooms: 1,
       square_feet: 480,
@@ -78,9 +78,9 @@ export function seedDemo(): Workspace {
       utilities: 'Water',
     },
     {
-      name: 'River Valley Loft',
-      address: '100 Avenue · Oliver',
-      rent: 1475,
+      name: 'Southbank Loft',
+      address: 'City Road · Southbank',
+      rent: 2900,
       bedrooms: 1,
       bathrooms: 1,
       square_feet: 780,
@@ -89,12 +89,12 @@ export function seedDemo(): Workspace {
       pets: 'Pets welcome',
       pool: false,
       gym: true,
-      utilities: 'Heat and water',
+      utilities: 'Gas and water',
     },
     {
-      name: 'University Heights',
-      address: '87 Avenue · University',
-      rent: 1295,
+      name: 'Parkville Heights',
+      address: 'Royal Parade · Parkville',
+      rent: 2290,
       bedrooms: 1,
       bathrooms: 1,
       square_feet: 650,
@@ -103,12 +103,12 @@ export function seedDemo(): Workspace {
       pets: null,
       pool: null,
       gym: null,
-      utilities: 'Heat',
+      utilities: 'Gas',
     },
     {
-      name: 'Westmount Two Bedroom',
-      address: '124 Street · Westmount',
-      rent: 1650,
+      name: 'South Yarra Two Bedroom',
+      address: 'Chapel Street · South Yarra',
+      rent: 3600,
       bedrooms: 2,
       bathrooms: 2,
       square_feet: 980,
@@ -131,7 +131,7 @@ export function seedDemo(): Workspace {
       url,
       title: sample.name,
       cleanedText,
-      metadata: { currency: 'CAD' },
+      metadata: { currency: 'AUD' },
       jsonLd: [],
       tables: [],
       wasTruncated: false,
@@ -143,7 +143,7 @@ export function seedDemo(): Workspace {
           f.id,
           {
             value,
-            currency: f.dataType === 'currency' ? 'CAD' : null,
+            currency: f.dataType === 'currency' ? 'AUD' : null,
             unit: null,
             confidence: value === null ? null : 'high',
             evidence:
@@ -337,7 +337,7 @@ export function demoQuery(text: string, fields: Field[]) {
       : undefined;
   if (!filters.length && !sort)
     throw new Error(
-      'Demo supports “under $1300 with parking”, “without parking”, “with a pool”, and “cheapest first”. Connect your backend for AI queries.',
+      'Demo supports “under $2300 with parking”, “without parking”, “with a pool”, and “cheapest first”. Connect your backend for AI queries.',
     );
   return validateFilter({ filters, ...(sort ? { sort } : {}) }, fields);
 }
